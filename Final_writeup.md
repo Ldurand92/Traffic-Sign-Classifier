@@ -1,4 +1,4 @@
-# **Traffic Sign Recognition** 
+# **Traffic Sign Recognition**
 
 ## Writeup
 
@@ -19,12 +19,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./Test_data/training_histogram.png "Visualization"
-[image4]: ./Test_data/11_(rightofway).jpg "Traffic Sign 1"
-[image5]: ./Test_data/12_(priority).jpg "Traffic Sign 2"
-[image6]: ./Test_data/13_(yield).jpg "Traffic Sign 3"
-[image7]: ./Test_data/17_(no_entry).jpg "Traffic Sign 4"
-[image8]: ./Test_data/34_(turn_left).jpg "Traffic Sign 5"
+[image1]: ./Test_Data/training_histogram.png "Visualization"
+[image4]: ./Test_Data/11_(rightofway).jpg "Traffic Sign 1"
+[image5]: ./Test_Data/12_(priority).jpg "Traffic Sign 2"
+[image6]: ./Test_Data/13_(yield).jpg "Traffic Sign 3"
+[image7]: ./Test_Data/17_(no_entry).jpg "Traffic Sign 4"
+[image8]: ./Test_Data/34_(turn_left).jpg "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -79,22 +79,22 @@ I studied LeNet Architecture and I started implementing LeNet Architecture but s
 Layer	Description
 Input	32x32x1 gray scale image
 Convolution 5x5	1x1 stride, valid padding, outputs 28x28x6
-RELU	
+RELU
 Max pooling	2x2 stride, outputs 14x14x6
 Convolution 5x5	1x1 stride, valid padding, outputs 10x10x16
-RELU	
+RELU
 Max pooling	2x2 stride, outputs 5x5x16
 Flatten	outputs 400
 Dropout          	                                   
 Fully connected	outputs 120
-RELU	
+RELU
 Dropout          	                                   
 Fully connected	outputs 84
-RELU	
+RELU
 Dropout          	                                   
 Fully connected	outputs 43
-Softmax	
- 
+Softmax
+
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
@@ -118,7 +118,7 @@ dropout keep probability - 0.5
 
 My final model results were:
 * training set accuracy of 0.996
-* validation set accuracy of 0.973 
+* validation set accuracy of 0.973
 * test set accuracy of 0.957
 
 
@@ -141,7 +141,7 @@ increase of epochs. validation accuracy = 97,5% (EPOCHS = 150, BATCH_SIZE = 128,
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
+![alt text][image4] ![alt text][image5] ![alt text][image6]
 ![alt text][image7] ![alt text][image8]
 
 some of these images might be hard to classify due to the background in them
@@ -150,9 +150,9 @@ some of these images might be hard to classify due to the background in them
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Right of way    		| Right of way 									| 
+| Image			        |     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| Right of way    		| Right of way 									|
 | priority     			| priority 										|
 | Yield					| Yield											|
 | no entry	      		| no entry  					 				|
@@ -167,18 +167,18 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a right of way (probability of 0.99), and the image does contain a a rigth of way. The top five soft max probabilities were: (The probability was so high that the other values we close to 0 but eventually all add up to 1)
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .99         			| right of way 									| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .99         			| right of way 									|
 | 0.0     				| keep right 									|
 | 0.0					| Yield											|
 | 0.0	      			| ahead only  					 				|
 | 0.0				    | priority road        							|
 
 second image
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1.0         			| priority road 								| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 1.0         			| priority road 								|
 | 0.0     				| Roundabout mandatory 							|
 | 0.0					| keep right									|
 | 0.0	      			| Speed limit (20km/h)  		 				|
@@ -186,18 +186,18 @@ second image
 
 third image:
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1.0         			| yield      									| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 1.0         			| yield      									|
 | 0.0     				| ahead only 									|
 | 0.0					| road work										|
 | 0.0	      			| Turn left ahead  								|
 | 0.0				    | Go straight or right 							|
 
 fourth image:
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 0.99         			| Right-of-way at the next intersection 		| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 0.99         			| Right-of-way at the next intersection 		|
 | 0.0     				| Beware of ice/snow 							|
 | 0.0					| Pedestrians									|
 | 0.0	      			| Double curve          		 				|
@@ -205,11 +205,10 @@ fourth image:
 
 fifth image:
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 0.99         			| No entry      								| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 0.99         			| No entry      								|
 | 0.0     				| stop      									|
 | 0.0					| Speed limit (20km/h)							|
 | 0.0	      			| Keep right    								|
 | 0.0				    | Speed limit (120km/h) 						|
-
